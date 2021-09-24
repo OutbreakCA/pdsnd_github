@@ -210,21 +210,24 @@ def user_stats(df):
 
 def see_raw_data(df):
     """
-    Shows user 5 lines of raw data on request
-    Asks user if they want to see more, exit's on any response
-    but 'Yes' or if no more rows to display.
+    Asks user if they want to see 5 lines of raw data.
+    Returns the 5 lines of raw data if user inputs `yes`. Iterate until user response with a `no`
+
 
     """
-    print("\n Here are 5 lines of raw data for you to look over \n")
-    pd.set_option('display.max_columns', None)
 
-    for i in range(0, len(df), 5):
-        print(df.iloc[i:(i+5)])
-        print('-'*40)
-        get_more_rows = input("Would you like to see the next 5 rows? Enter Yes or No\n")
-        if get_more_rows.title() != 'Yes':
-            break
-        elif i > (len(df)-5):
+
+    data = 0
+
+
+    while True:
+        answer = input('Would you like to display 5 lines of the raw data? Enter either Yes or No: ')
+        if answer.lower() == 'yes':
+            print(df[data : data+5])
+            data += 5
+
+
+        else:
             break
 
 def main():
@@ -237,7 +240,7 @@ def main():
         user_stats(df)
         see_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nWould you like to restart? Enter Yes or No.\n')
         if restart.lower() != 'yes':
             break
 
