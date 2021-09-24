@@ -2,11 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
-filename = "C:/Users/t_mcg/Desktop/Udacity Python For Data Analysis Course/Python/Bikeshare Task"
 
-CITY_DATA = { 'Chicago': filename + '/chicago.csv',
-              'New York City':filename + '/new_york_city.csv',
-              'Washington': filename + '/washington.csv' }
+CITY_DATA = { 'Chicago': '/chicago.csv',
+              'New York City':'/new_york_city.csv',
+              'Washington''/washington.csv' }
 
 weekday = ['Sunday',
       'Monday',
