@@ -8,7 +8,8 @@ Bikeshare Project
 
 ### Description
 A project designed to analyse bikeshare data across a series of CSV files using
-python and provide a way for users to filter data using the command prompt
+python and provide a way for users to filter data using the command prompt.
+csv files not included.
 
 ### Files used
 bikeshare_2.py
